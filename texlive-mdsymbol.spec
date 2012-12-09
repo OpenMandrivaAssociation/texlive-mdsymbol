@@ -144,3 +144,11 @@ might also fit well with other contemporary typefaces.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Mon Jan 09 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.3-1
++ Revision: 758987
+- texlive-mdsymbol
+- texlive-mdsymbol
+
