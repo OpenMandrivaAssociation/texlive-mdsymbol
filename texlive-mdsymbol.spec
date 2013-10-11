@@ -1,18 +1,19 @@
-# revision 25049
+# revision 28399
 # category Package
 # catalog-ctan /fonts/mdsymbol
-# catalog-date 2012-01-08 14:35:05 +0100
+# catalog-date 2012-11-29 15:59:01 +0100
 # catalog-license ofl
-# catalog-version 0.3
+# catalog-version 0.5
 Name:		texlive-mdsymbol
-Version:	0.3
+Version:	0.5
 Release:	1
 Summary:	Symbol fonts to match Adobe Myriad Pro
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/mdsymbol
 License:	OFL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mdsymbol.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mdsymbol.source.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mdsymbol.doc.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mdsymbol.source.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -131,24 +132,19 @@ might also fit well with other contemporary typefaces.
 %{_texmfdistdir}/fonts/type1/public/mdsymbol/MdSymbolF-Regular.pfb
 %{_texmfdistdir}/fonts/type1/public/mdsymbol/MdSymbolF-Semibold.pfb
 %{_texmfdistdir}/tex/latex/mdsymbol/mdsymbol.sty
+%doc %{_texmfdistdir}/doc/fonts/mdsymbol/FONTLOG.txt
+%doc %{_texmfdistdir}/doc/fonts/mdsymbol/OFL.txt
+%doc %{_texmfdistdir}/doc/latex/mdsymbol/mdsymbol.pdf
 #- source
 %doc %{_texmfdistdir}/source/latex/mdsymbol/mdsymbol.dtx
 %doc %{_texmfdistdir}/source/latex/mdsymbol/mdsymbol.ins
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%setup -c -a0 -a1 -a2
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts tex source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Mon Jan 09 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.3-1
-+ Revision: 758987
-- texlive-mdsymbol
-- texlive-mdsymbol
-
+cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
