@@ -1,19 +1,13 @@
-# revision 28399
-# category Package
-# catalog-ctan /fonts/mdsymbol
-# catalog-date 2012-11-29 15:59:01 +0100
-# catalog-license ofl
-# catalog-version 0.5
 Name:		texlive-mdsymbol
-Version:	0.5
-Release:	10
+Version:	28399
+Release:	1
 Summary:	Symbol fonts to match Adobe Myriad Pro
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/mdsymbol
 License:	OFL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mdsymbol.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mdsymbol.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mdsymbol.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mdsymbol.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mdsymbol.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mdsymbol.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -25,12 +19,12 @@ The font is designed as a companion to Adobe Myriad Pro, but it
 might also fit well with other contemporary typefaces.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -141,7 +135,8 @@ might also fit well with other contemporary typefaces.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
