@@ -1,6 +1,6 @@
 Name:		texlive-mdsymbol
 Version:	28399
-Release:	1
+Release:	2
 Summary:	Symbol fonts to match Adobe Myriad Pro
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/mdsymbol
