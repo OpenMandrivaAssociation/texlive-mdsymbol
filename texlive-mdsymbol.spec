@@ -3,7 +3,7 @@ Version:	28399
 Release:	2
 Summary:	Symbol fonts to match Adobe Myriad Pro
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/mdsymbol
+URL:		https://www.ctan.org/tex-archive/fonts/mdsymbol
 License:	OFL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mdsymbol.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/mdsymbol.doc.r%{version}.tar.xz
